@@ -9,7 +9,7 @@ Summary(fr):	Authentification de base pour le serveur Web Apache utilisant une b
 Summary(it):	Autenticazione di base per il server web Apache mediante un database PostgreSQL
 Summary(ja):	PostgreSQL ¥Ç¡¼¥¿¥Ù¡¼¥¹¤ò»È¤Ã¤¿ Apache Web ¥µ¡¼¥Ð¡¼¤Ø¤Î´ðËÜÇ§¾Ú
 Summary(nb):	Autentisering for webtjeneren Apache fra en PostgreSQL-database
-Summary(pl):	Modu³ autentykacji PostgreSQL dla Apache
+Summary(pl):	Modu³ uwierzytelnienia PostgreSQL dla Apache
 Summary(pt_BR):	Autenticação via PostgreSQL para o Apache
 Summary(sv):	Grundläggande autenticering till webbservern Apache med en PostgreSQL-databas
 Name:		apache-mod_%{mod_name}
@@ -65,8 +65,8 @@ Mod_auth_pgsql ¤Ï¡¢PostgresQL ¥Ç¡¼¥¿¥Ù¡¼¥¹¤Î¥Æ¡¼¥Ö¥ë¤ÎÃæ¤Î¥Õ¥£¡¼¥ë¥É¤ò
 À©¸Â¤Ç¤­¤Þ¤¹¡£
 
 %description -l pl
-To jest modu³ autentykacji dla Apache pozwalaj±cy na autentykacjê
-klientów HTTP z u¿yciem bazy danych postgresql.
+To jest modu³ uwierzytelnienia dla Apache pozwalaj±cy na
+uwierzytelnianie klientów HTTP z u¿yciem bazy danych postgresql.
 
 %description -l pt_BR
 Com o mod_auth_pgsql você pode fazer autenticação no Apache usando o
