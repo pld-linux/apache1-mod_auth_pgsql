@@ -14,7 +14,7 @@ Summary(pt_BR):	Autenticação via PostgreSQL para o Apache
 Summary(sv):	Grundläggande autenticering till webbservern Apache med en PostgreSQL-databas
 Name:		apache1-mod_%{mod_name}
 Version:	0.9.12
-Release:	1.3
+Release:	2
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.giuseppetanzilli.it/mod_%{mod_name}/dist/mod_%{mod_name}-%{version}.tar.gz
