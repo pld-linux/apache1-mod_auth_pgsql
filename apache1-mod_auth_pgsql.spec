@@ -19,12 +19,12 @@ License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.giuseppetanzilli.it/mod_%{mod_name}/dist/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	7be403b7487c13cdb023cc526ee2e13a
-BuildRequires:	postgresql-devel
+URL:		http://www.giuseppetanzilli.it/mod_auth_pgsql/
 BuildRequires:	%{apxs}
 BuildRequires:	apache(EAPI)-devel
+BuildRequires:	postgresql-devel
 Prereq:		%{_sbindir}/apxs
 Requires:	apache(EAPI)
-URL:		http://www.giuseppetanzilli.it/mod_auth_pgsql/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	mod_auth_pgsql
 
