@@ -1,4 +1,5 @@
 %define		mod_name	auth_pgsql
+%define 	apxs		/usr/sbin/apxs
 Summary:	This is the PostgreSQL authentication module for Apache
 Summary(cs):	Základní autentizace pro WWW server Apache pomocí PostgreSQL
 Summary(da):	Autenticering for webtjeneren Apache fra en PostgreSQL-database
@@ -32,14 +33,14 @@ Group(sv):	Nätverk/Demoner
 Group(uk):	íÅÒÅÖÁ/äÅÍÏÎÉ
 Source0:	http://www.giuseppetanzilli.it/mod_%{mod_name}/dist/mod_%{mod_name}-%{version}.tar.gz
 BuildRequires:	postgresql-devel
-BuildRequires:	/usr/sbin/apxs
+BuildRequires:	%{apxs}
 BuildRequires:	apache(EAPI)-devel
-Prereq:		/usr/sbin/apxs
+Prereq:		%{_sbindir}/apxs
 Requires:	apache(EAPI)
 URL:		http://www.giuseppetanzilli.it/mod_auth_pgsql/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_pkglibdir	%(/usr/sbin/apxs -q LIBEXECDIR)
+%define		_pkglibdir	%(%{apxs} -q LIBEXECDIR)
 
 %description
 This is an authentication module for Apache that allows you to
@@ -92,7 +93,7 @@ PostgreSQL-databas.
 %setup -q -n "mod_%{mod_name}-%{version}"
 
 %build
-/usr/sbin/apxs \
+%{apxs} \
 	-I %{_includedir}/postgresql \
 	-l pq \
 	-c mod_%{mod_name}.c \
@@ -108,14 +109,14 @@ install mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/sbin/apxs -e -a -n auth_pgsql %{_pkglibdir}/mod_%{mod_name}.so 1>&2
+%{_sbindir}/apxs -e -a -n auth_pgsql %{_pkglibdir}/mod_%{mod_name}.so 1>&2
 if [ -f /var/lock/subsys/httpd ]; then
 	/etc/rc.d/init.d/httpd restart 1>&2
 fi
 
 %preun
 if [ "$1" = "0" ]; then
-	/usr/sbin/apxs -e -A -n auth_pgsql %{_pkglibdir}/mod_%{mod_name}.so 1>&2
+	%{_sbindir}/apxs -e -A -n auth_pgsql %{_pkglibdir}/mod_%{mod_name}.so 1>&2
 	if [ -f /var/lock/subsys/httpd ]; then
 		/etc/rc.d/init.d/httpd restart 1>&2
 	fi
