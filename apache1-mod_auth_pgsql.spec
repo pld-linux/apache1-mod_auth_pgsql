@@ -3,14 +3,13 @@ Summary:	This is the PgSQL authentication module for Apache
 Summary(pl):	Modu³ autentykacji PgSQL dla Apache
 Summary(pt_BR):	Autenticação via PostgreSQL para o Apache
 Name:		apache-mod_%{mod_name}
-Version:	0.9.10
+Version:	0.9.11
 Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Group(de):	Netzwerkwesen/Server
 Group(pl):	Sieciowe/Serwery
 Source0:	http://www.giuseppetanzilli.it/mod_%{mod_name}/dist/mod_%{mod_name}-%{version}.tar.gz
-Patch0:		%{name}-version.patch
 BuildRequires:	postgresql-devel
 BuildRequires:	/usr/sbin/apxs
 BuildRequires:	apache(EAPI)-devel
@@ -35,7 +34,6 @@ PostgreSQL.
 
 %prep 
 %setup -q -n "mod_%{mod_name}-%{version}"
-%patch0 -p1
 
 %build
 /usr/sbin/apxs \
