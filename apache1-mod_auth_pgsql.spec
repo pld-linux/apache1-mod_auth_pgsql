@@ -1,14 +1,35 @@
 %define		mod_name	auth_pgsql
-Summary:	This is the PgSQL authentication module for Apache
-Summary(pl):	Modu³ autentykacji PgSQL dla Apache
+Summary:	This is the PostgreSQL authentication module for Apache
+Summary(cs):	Základní autentizace pro WWW server Apache pomocí PostgreSQL
+Summary(da):	Autenticering for webtjeneren Apache fra en PostgreSQL-database
+Summary(de):	Authentifizierung für den Apache Web-Server, der eine PostgreSQL-Datenbank verwendet
+Summary(es):	Autenticación vía PostgreSQL para Apache
+Summary(fr):	Authentification de base pour le serveur Web Apache utilisant une base de données PostgreSQL
+Summary(it):	Autenticazione di base per il server web Apache mediante un database PostgreSQL
+Summary(ja):	PostgreSQL ¥Ç¡¼¥¿¥Ù¡¼¥¹¤ò»È¤Ã¤¿ Apache Web ¥µ¡¼¥Ð¡¼¤Ø¤Î´ðËÜÇ§¾Ú
+Summary(no):	Autentisering for webtjeneren Apache fra en PostgreSQL-database
+Summary(pl):	Modu³ autentykacji PostgreSQL dla Apache
 Summary(pt_BR):	Autenticação via PostgreSQL para o Apache
+Summary(sv):	Grundläggande autenticering till webbservern Apache med en PostgreSQL-databas
 Name:		apache-mod_%{mod_name}
 Version:	0.9.12
 Release:	1
 License:	GPL
 Group:		Networking/Daemons
+Group(cs):	Sí»ové/Démoni
+Group(da):	Netværks/Dæmoner
 Group(de):	Netzwerkwesen/Server
+Group(es):	Red/Servidores
+Group(fr):	Réseau/Serveurs
+Group(is):	Net/Púkar
+Group(it):	Rete/Demoni
+Group(no):	Nettverks/Daemoner
 Group(pl):	Sieciowe/Serwery
+Group(pt):	Rede/Servidores
+Group(ru):	óÅÔØ/äÅÍÏÎÙ
+Group(sl):	Omre¾ni/Stre¾niki
+Group(sv):	Nätverk/Demoner
+Group(uk):	íÅÒÅÖÁ/äÅÍÏÎÉ
 Source0:	http://www.giuseppetanzilli.it/mod_%{mod_name}/dist/mod_%{mod_name}-%{version}.tar.gz
 BuildRequires:	postgresql-devel
 BuildRequires:	/usr/sbin/apxs
@@ -24,6 +45,36 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is an authentication module for Apache that allows you to
 authenticate HTTP clients using postgresql RDBMS.
 
+%description -l cs
+Balíèek mod_auth_pgsql slou¾í pro omezení pøístupu k dokumentùm, které
+poskytuje WWW server Apache. Jména a hesla jsou ulo¾ena v databázi
+PostgreSQL.
+
+%description -l de
+Mod_auth_pgsql kann verwendet werden, um den Zugriff auf von einem
+Web- Server bediente Dokumente zu beschränken, indem es die Felder in
+einer Tabelle in einer PostgresQL-Datenbank prüft.
+
+%description -l es
+Mod_auth_pgsql puede usarse para limitar el acceso a documentos
+servidos desde un servidor web verificando datos en una base de datos
+PostgreSQL.
+
+%description -l fr
+mod_auth_pgsql peut être utilisé pour limiter l'accès à des documents
+servis par un serveur Web en vérifiant des champs dans une table d'une
+base de données PostgresQL.
+
+%description -l it
+Mod_auth_pgsql può essere usato per limitare l'accesso a documenti
+serviti da un server Web controllando i campi di una tabella in un
+database PostgresQL.
+
+%description -l ja
+Mod_auth_pgsql ¤Ï¡¢PostgresQL ¥Ç¡¼¥¿¥Ù¡¼¥¹¤Î¥Æ¡¼¥Ö¥ë¤ÎÃæ¤Î¥Õ¥£¡¼¥ë¥É¤ò
+¥Á¥§¥Ã¥¯¤¹¤ë¤³¤È¤Ë¤è¤Ã¤Æ¡¢Web ¥µ¡¼¥Ð¡¼¤¬Äó¶¡¤¹¤ëÊ¸½ñ¤Ø¤Î¥¢¥¯¥»¥¹¤ò
+À©¸Â¤Ç¤­¤Þ¤¹¡£
+
 %description -l pl
 To jest modu³ autentykacji dla Apache pozwalaj±cy na autentykacjê
 klientów HTTP z u¿yciem bazy danych postgresql.
@@ -32,7 +83,12 @@ klientów HTTP z u¿yciem bazy danych postgresql.
 Com o mod_auth_pgsql você pode fazer autenticação no Apache usando o
 PostgreSQL.
 
-%prep 
+%description -l sv
+Mod_auth_pgsql kan användas för att begränsa åtkomsten till dokument
+servade av en webbserver genom att kontrollera data i en
+PostgreSQL-databas.
+
+%prep
 %setup -q -n "mod_%{mod_name}-%{version}"
 
 %build
