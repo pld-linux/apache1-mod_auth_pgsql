@@ -3,7 +3,7 @@ Summary:	This is the PgSQL authentication module for Apache
 Summary(pl):	Modu³ autentykacji PgSQL dla Apache
 Summary(pt_BR):	Autenticação via PostgreSQL para o Apache
 Name:		apache-mod_%{mod_name}
-Version:	0.9.11
+Version:	0.9.12
 Release:	1
 License:	GPL
 Group:		Networking/Daemons
