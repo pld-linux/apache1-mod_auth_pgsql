@@ -8,7 +8,7 @@ Summary(es):	Autenticación vía PostgreSQL para Apache
 Summary(fr):	Authentification de base pour le serveur Web Apache utilisant une base de données PostgreSQL
 Summary(it):	Autenticazione di base per il server web Apache mediante un database PostgreSQL
 Summary(ja):	PostgreSQL ¥Ç¡¼¥¿¥Ù¡¼¥¹¤ò»È¤Ã¤¿ Apache Web ¥µ¡¼¥Ð¡¼¤Ø¤Î´ðËÜÇ§¾Ú
-Summary(no):	Autentisering for webtjeneren Apache fra en PostgreSQL-database
+Summary(nb):	Autentisering for webtjeneren Apache fra en PostgreSQL-database
 Summary(pl):	Modu³ autentykacji PostgreSQL dla Apache
 Summary(pt_BR):	Autenticação via PostgreSQL para o Apache
 Summary(sv):	Grundläggande autenticering till webbservern Apache med en PostgreSQL-databas
