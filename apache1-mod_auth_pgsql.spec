@@ -18,6 +18,7 @@ Release:	4
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.giuseppetanzilli.it/mod_%{mod_name}/dist/mod_%{mod_name}-%{version}.tar.gz
+# Source0-md5:	7be403b7487c13cdb023cc526ee2e13a
 BuildRequires:	postgresql-devel
 BuildRequires:	%{apxs}
 BuildRequires:	apache(EAPI)-devel
