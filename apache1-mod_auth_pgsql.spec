@@ -1,5 +1,5 @@
 %define		mod_name	auth_pgsql
-%define 	apxs		/usr/sbin/apxs
+%define 	apxs		/usr/sbin/apxs1
 Summary:	This is the PostgreSQL authentication module for Apache
 Summary(cs):	Základní autentizace pro WWW server Apache pomocí PostgreSQL
 Summary(da):	Autenticering for webtjeneren Apache fra en PostgreSQL-database
@@ -12,21 +12,21 @@ Summary(nb):	Autentisering for webtjeneren Apache fra en PostgreSQL-database
 Summary(pl):	Modu³ uwierzytelnienia PostgreSQL dla Apache
 Summary(pt_BR):	Autenticação via PostgreSQL para o Apache
 Summary(sv):	Grundläggande autenticering till webbservern Apache med en PostgreSQL-databas
-Name:		apache-mod_%{mod_name}
+Name:		apache1-mod_%{mod_name}
 Version:	0.9.12
-Release:	4
+Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.giuseppetanzilli.it/mod_%{mod_name}/dist/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	7be403b7487c13cdb023cc526ee2e13a
 URL:		http://www.giuseppetanzilli.it/mod_auth_pgsql/
 BuildRequires:	%{apxs}
-BuildRequires:	apache(EAPI)-devel
-BuildRequires:	postgresql-devel
+BuildRequires:	apache1-devel >= 1.3.9
+BuildRequires:	postgresql-devel >= 7
 Requires(post,preun):	%{apxs}
-Requires:	apache(EAPI)
+Requires:	apache1 >= 1.3.9
+Obsoletes:	apache-mod_%{mod_name} <= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	mod_auth_pgsql
 
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR)
 
@@ -78,12 +78,12 @@ servade av en webbserver genom att kontrollera data i en
 PostgreSQL-databas.
 
 %prep
-%setup -q -n "mod_%{mod_name}-%{version}"
+%setup -q -n mod_%{mod_name}-%{version}
 
 %build
 %{apxs} \
-	-I %{_includedir}/postgresql \
-	-l pq \
+	-I%{_includedir}/postgresql \
+	-lpq \
 	-c mod_%{mod_name}.c \
 	-o mod_%{mod_name}.so
 
@@ -98,15 +98,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %{apxs} -e -a -n auth_pgsql %{_pkglibdir}/mod_%{mod_name}.so 1>&2
-if [ -f /var/lock/subsys/httpd ]; then
-	/etc/rc.d/init.d/httpd restart 1>&2
+if [ -f /var/lock/subsys/apache ]; then
+	/etc/rc.d/init.d/apache restart 1>&2
 fi
 
 %preun
 if [ "$1" = "0" ]; then
 	%{apxs} -e -A -n auth_pgsql %{_pkglibdir}/mod_%{mod_name}.so 1>&2
-	if [ -f /var/lock/subsys/httpd ]; then
-		/etc/rc.d/init.d/httpd restart 1>&2
+	if [ -f /var/lock/subsys/apache ]; then
+		/etc/rc.d/init.d/apache restart 1>&2
 	fi
 fi
 
