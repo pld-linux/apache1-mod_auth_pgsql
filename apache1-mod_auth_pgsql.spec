@@ -1,5 +1,6 @@
 %define		mod_name	auth_pgsql
 Summary:	This is the PgSQL authentication module for Apache
+Summary(pt_BR):	Autenticação via PostgreSQL para o Apache
 Name:		apache-mod_%{mod_name}
 Version:	0.9.10
 Release:	1
@@ -23,13 +24,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is an authentication module for Apache that allows you to
 authenticate HTTP clients using postgresql RDBMS.
 
+%description -l pt_BR
+Com o mod_auth_pgsql você pode fazer autenticação no Apache usando o
+PostgreSQL.
+
 %prep 
 %setup -q -n "mod_%{mod_name}-%{version}"
 %patch0 -p1
 
 %build
 /usr/sbin/apxs \
-	-I /usr/include/postgresql \
+	-I %{_includedir}/postgresql \
 	-l pq \
 	-c mod_%{mod_name}.c \
 	-o mod_%{mod_name}.so
