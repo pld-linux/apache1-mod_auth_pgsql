@@ -1,17 +1,17 @@
 %define		mod_name	auth_pgsql
 %define 	apxs		/usr/sbin/apxs1
 Summary:	This is the PostgreSQL authentication module for Apache
-Summary(cs.UTF-8):   Základní autentizace pro WWW server Apache pomocí PostgreSQL
-Summary(da.UTF-8):   Autenticering for webtjeneren Apache fra en PostgreSQL-database
-Summary(de.UTF-8):   Authentifizierung für den Apache Web-Server, der eine PostgreSQL-Datenbank verwendet
-Summary(es.UTF-8):   Autenticación vía PostgreSQL para Apache
-Summary(fr.UTF-8):   Authentification de base pour le serveur Web Apache utilisant une base de données PostgreSQL
-Summary(it.UTF-8):   Autenticazione di base per il server web Apache mediante un database PostgreSQL
-Summary(ja.UTF-8):   PostgreSQL データベースを使った Apache Web サーバーへの基本認証
-Summary(nb.UTF-8):   Autentisering for webtjeneren Apache fra en PostgreSQL-database
-Summary(pl.UTF-8):   Moduł uwierzytelnienia PostgreSQL dla Apache
-Summary(pt_BR.UTF-8):   Autenticação via PostgreSQL para o Apache
-Summary(sv.UTF-8):   Grundläggande autenticering till webbservern Apache med en PostgreSQL-databas
+Summary(cs.UTF-8):	Základní autentizace pro WWW server Apache pomocí PostgreSQL
+Summary(da.UTF-8):	Autenticering for webtjeneren Apache fra en PostgreSQL-database
+Summary(de.UTF-8):	Authentifizierung für den Apache Web-Server, der eine PostgreSQL-Datenbank verwendet
+Summary(es.UTF-8):	Autenticación vía PostgreSQL para Apache
+Summary(fr.UTF-8):	Authentification de base pour le serveur Web Apache utilisant une base de données PostgreSQL
+Summary(it.UTF-8):	Autenticazione di base per il server web Apache mediante un database PostgreSQL
+Summary(ja.UTF-8):	PostgreSQL データベースを使った Apache Web サーバーへの基本認証
+Summary(nb.UTF-8):	Autentisering for webtjeneren Apache fra en PostgreSQL-database
+Summary(pl.UTF-8):	Moduł uwierzytelnienia PostgreSQL dla Apache
+Summary(pt_BR.UTF-8):	Autenticação via PostgreSQL para o Apache
+Summary(sv.UTF-8):	Grundläggande autenticering till webbservern Apache med en PostgreSQL-databas
 Name:		apache1-mod_%{mod_name}
 Version:	0.9.12
 Release:	4
