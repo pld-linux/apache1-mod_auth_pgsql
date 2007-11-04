@@ -20,8 +20,7 @@ Group:		Networking/Daemons
 Source0:	http://www.giuseppetanzilli.it/mod_%{mod_name}/dist/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	7be403b7487c13cdb023cc526ee2e13a
 URL:		http://www.giuseppetanzilli.it/mod_auth_pgsql/
-BuildRequires:	apache1-apxs
-BuildRequires:	apache1-devel >= 1.3.33-2
+BuildRequires:	apache1-devel >= 1.3.39
 BuildRequires:	postgresql-devel >= 7
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires(triggerpostun):	%{apxs}
